@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="my_app">
+    <div class="container">
+        <div class="row">
+            <div class="col" ng-controller="bai2Controller">
+                <form action="" method="post" name="form2">
+                    <div class="card" style="width: auto;">
+                        <div class="card-header text-uppercase">
+                            bán hàng giải khát
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">&nbsp;</th>
+                                        <th scope="col">Tên hàng</th>
+                                        <th scope="col">Số lượng</th>
+                                        <th scope="col">Đơn giá</th>
+                                        <th scope="col">Thành tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="product in products" ng-init="product.quantity = 0">
+                                        <td scope="row">
+                                            <input type="checkbox" ng-model="product.buy" name="" id="">
+                                        </td>
+                                        <td>{{product.name}}</td>
+                                        <td>
+                                            <input type="number" min="1" ng-model="product.quantity" ng-disabled="!product.buy">
+                                        </td>
+                                        <td>{{product.price | currency : "VND" : 1 }}</td>
+                                        <td>
+                                            {{product.price * product.quantity | currency : "VND" : 1}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            Tổng tiền: <strong>{{ total() | currency : "VND" : 1 }}</strong>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="./js/angular.min.js"></script>
+    <script>
+        var app = angular.module('my_app', []);
+        app.controller('bai2Controller', function($scope){
+            $scope.products = [
+                {
+                    name: 'Nước mía',
+                    price: 8000
+                },
+                {
+                    name: 'Number One',
+                    price: 10000
+                },
+                {
+                    name: 'Lavile',
+                    price: 5000
+                },
+                {
+                    name: 'Trà xanh 0 độ',
+                    price: 11000
+                },
+                {
+                    name: 'Bò húc',
+                    price: 12000
+                },
+            ];
+
+            $scope.total = function(){
+                var amount = 0;
+                this.products.forEach(i => {
+                    if(i.buy){
+                        amount += i.price * i.quantity;
+                    }
+                });
+                return amount;
+            }
+        })
+    </script>
+</body>
+</html>

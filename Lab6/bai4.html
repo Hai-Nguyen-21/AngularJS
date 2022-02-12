@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="my_app">
+    <div class="container">
+        <div class="row">
+            <div class="col" ng-controller="bai4Controller">
+                <form action="" method="post" name="form4">
+                    <div class="card" style="width: auto;">
+                        <div class="card-header text-uppercase">
+                            thông tin sinh viên
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group mb-3">
+                                <label for="">Họ và tên</label>
+                                <input required 
+                                        maxlength="25"
+                                        ng-model="fullname"
+                                        type="text" 
+                                        class="form-control" 
+                                        aria-describedby="fullnameinput" name="fullnameinput" id="fullnameinput">
+                                <small ng-show="form4.fullnameinput.$invalid" id="fullnameinput" class="text-danger">Họ và tên không hợp lệ</small>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label for="">Điểm</label>
+                                <input required 
+                                        ng-model="mark"
+                                        min="0"
+                                        max="10"
+                                        type="number" 
+                                        class="form-control" 
+                                        aria-describedby="markinput" name="markinput" id="markinput">
+                                <small ng-show="form4.markinput.$invalid" id="markinput" class="text-danger">Điểm phải trong khoảng từ 0 đến 10</small>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label for="">Email</label>
+                                <input required 
+                                        ng-model="email"
+                                        type="email" 
+                                        class="form-control" 
+                                        aria-describedby="emailinput" name="emailinput" id="emailinput">
+                                <small ng-show="form4.emailinput.$invalid" id="emailinput" class="text-danger">Email không hợp lệ</small>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label for="">Số xe</label>
+                                <input required 
+                                        ng-model="soxe"
+                                        pattern="5\d-[A-Z]\d-((\d{4})|(\d{3}\.\d{2}))"
+                                        type="text" 
+                                        class="form-control" 
+                                        aria-describedby="soxeinput" name="soxeinput" id="soxeinput">
+                                <small ng-show="form4.soxeinput.$invalid" id="soxeinput" class="text-danger">Số xe không đúng định dạng</small>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Lưu</button>
+                        </div>
+                    </div>
+                    <div ng-if="form4.$valid" class="alert alert-success" role="alert">
+                        <strong>Chúc mừng bạn đã nhập đúng dữ liệu</strong>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="./js/angular.min.js"></script>
+    <script>
+        var app = angular.module('my_app', []);
+        app.controller('bai4Controller', function($scope){
+
+        })
+    </script>
+</body>
+</html>

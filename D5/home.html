@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+    <div id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://wowslider.com/sliders/demo-93/data1/images/lake.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wowslider.com/sliders/demo-93/data1/images/landscape.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- collapse -->
+    <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+            aria-expanded="false" aria-controls="collapseWidthExample">
+            Toggle width collapse
+        </button>
+    </p>
+    <div style="min-height: 120px;">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            <div class="card card-body" style="width: 300px;">
+                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+            </div>
+        </div>
+    </div>
+
+    <!-- phân trang -->
+    <div class="table-responsive" id="tbl_sv">
+        <table class="table table-dark table-striped">
+            <thead class="text-center">
+                <tr>
+                    <th rowspan="2">Mã NV</th>
+                    <th rowspan="2">Họ Và Tên</th>
+                    <th colspan="3">Thu Nhập</th>
+                </tr>
+                <tr>
+                    <th>Lương</th>
+                    <th>Thưởng</th>
+                    <th>Phụ Cấp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NV100</td>
+                    <td>Nguyễn Công Phượng</td>
+                    <td>5000000</td>
+                    <td>5000000</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>NV102</td>
+                    <td>Phan Văn Tài Em</td>
+                    <td>9000000</td>
+                    <td>5000000</td>
+                    <td>100000</td>
+                </tr>
+                <tr>
+                    <td>NV103</td>
+                    <td>Lê Huỳnh Đức</td>
+                    <td>7000000</td>
+                    <td>3000000</td>
+                    <td>200000</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a href="#" class="page-link"><<</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link">Trang 1</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link">Trang 2</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link">Trang 3</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link">>></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Object</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body ng-app="demo_object_app">
+    
+    <div ng-controller="show_info">
+        <ul>
+            <li>
+                Avatar:
+                <img src="{{ info.avatar }}" class="w-25 h-25" alt="">
+            </li>
+            <li>
+                Name:
+                {{ info.name }}
+            </li>
+            <li>
+                ID:
+                {{ info.id }}
+            </li>
+            <li>
+                Email:
+                {{ info.email }}
+            </li>
+            <li>
+                Phone number:
+                {{ info.phone }}
+            </li>
+            <li>
+                Major:
+                {{ info.major }}
+            </li>
+        </ul>
+        
+    </div>
+
+    <!-- angular js -->
+    <script src="../D7/js/angularjs.min.js"></script>
+    <!-- làm này làm kia nè -->
+    <script>
+        const app = angular.module('demo_object_app', [])
+
+        function showInfo($scope){
+            let info = {
+                name: "Nguyễn Lê Hải",
+                id: 'hainl',
+                email: 'hainlph17388@fpt.edu.vn',
+                phone: '0977256375',
+                major: 'UDPM',
+                avatar: 'https://source.unsplash.com/random/1'
+            }
+
+            $scope.info = info
+        }
+
+        app.controller('show_info', showInfo)
+    </script>
+</body>
+</html>

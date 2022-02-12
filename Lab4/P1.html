@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần 1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body ng-app="phan1">
+
+    <div ng-controller="show_infos">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Avatar</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">Major</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="info in infos">
+                    <th scope="row">
+                        <img src="{{info.avatar}}" style="width: 100px; height: 100px;" alt="">
+                    </th>
+                    <td>{{ info.id }}</td>
+                    <td>{{ info.name }}</td>
+                    <td>{{ info.phone }}</td>
+                    <td>{{ info.major }}</td>
+                    <td>{{ info.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    
+    <!-- angular js -->
+    <script src="../D7/js/angularjs.min.js"></script>
+    <!-- làm này làm kia nè -->
+    <script>
+        var app = angular.module('phan1', []);
+
+        function showInfo($scope){
+            let infos = [
+                {
+                    name: "Nguyễn Lê Hải",
+                    id: 'hainl',
+                    email: 'hainlph17388@fpt.edu.vn',
+                    phone: '0977256375',
+                    major: 'UDPM',
+                    avatar: 'https://source.unsplash.com/random/1'
+                },
+                {
+                    name: "Lê Thành Đạt",
+                    id: 'datlt',
+                    email: 'datltph17388@fpt.edu.vn',
+                    phone: '0977256375',
+                    major: 'UDPM',
+                    avatar: 'https://source.unsplash.com/random/2'
+                },
+                {
+                    name: "Trần Đức Quang",
+                    id: 'quangtd',
+                    email: 'quangtdph17388@fpt.edu.vn',
+                    phone: '0977256375',
+                    major: 'UDPM',
+                    avatar: 'https://source.unsplash.com/random/3'
+                },
+                {
+                    name: "Phạm Minh Tú",
+                    id: 'tupm',
+                    email: 'tupmph17388@fpt.edu.vn',
+                    phone: '0977256375',
+                    major: 'UDPM',
+                    avatar: 'https://source.unsplash.com/random/4'
+                },
+
+            ]
+            $scope.infos = infos
+        }
+
+        app.controller('show_infos', showInfo);
+    </script>
+</body>
+</html>

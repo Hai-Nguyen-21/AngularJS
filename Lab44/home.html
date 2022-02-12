@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="my-app">
+
+    <div class="container" ng-controller="myController">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Chiểu dài</label>
+            <input ng-model="chieudai" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Chiều rộng</label>
+            <input  ng-model="chieurong" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Chu vi</label>
+            <input  ng-model="chuvi" disabled type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Diện tích</label>
+            <input  ng-model="dientich" disabled type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-success text-uppercase" ng-click="calculator()">grade</button>
+        </div>
+    </div>
+    
+    <script src="./js/angular.min.js"></script>
+    <script>
+        var app = angular.module('my-app', []);
+        app.controller('myController', function($scope){
+            $scope.calculator=function(){
+                var chieudai = parseFloat($scope.chieudai);
+                var chieurong = parseFloat($scope.chieurong);
+
+                $scope.chuvi = (chieudai+chieurong)*2;
+                $scope.dientich = chieudai*chieurong;
+            }
+        })
+    </script>
+</body>
+</html>

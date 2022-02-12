@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="my-app">
+    
+    <div ng-controller="parentController" class="bg-success m-3 text-center p-3">
+        {{msg1}}
+       <div ng-controller="myController1" class="bg-info m-3">
+            {{$parent.msg}}
+        </div>
+        <div ng-controller="myController2" class="bg-danger text-white m-3">
+            {{msg2}}
+        </div> 
+    </div>
+    
+
+    <script src="./js/angular.min.js"></script>
+    <script>
+        var app = angular.module('my-app', []);
+        app.controller('parentController', function($scope){
+            $scope.msg = "This is message pareant controller"
+        })
+        app.controller('myController1', function($scope){
+            $scope.msg1 = "This is message 1"
+        })
+        app.controller('myController2', function($scope){
+            $scope.msg2 = "This is message 2"
+        })
+    </script>
+</body>
+</html>

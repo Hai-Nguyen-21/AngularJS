@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="my_app">
+    <div class="container">
+        <div class="row">
+            <div class="col" ng-controller="bonusController">
+                <form action="" method="post" name="form1">
+                    <div class="card" style="width: 25rem;">
+                        <div class="card-header text-uppercase">
+                            Tính lương thưởng tết nguyên đán
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="fullname">Họ và tên: </label>
+                                <input type="text" 
+                                        ng-model="fullname"
+                                        class="form-control"
+                                        name="fullname"
+                                        id="fullname"
+                                        required>
+                                <small class="form-text text-danger"
+                                        ng-show="form1.fullname.$invalid">
+                                        Họ tên không được để trống
+                                </small>
+                                <!-- <small class="form-text text-danger"
+                                        ng-hide="form1.fullname.$valid">
+                                        Họ tên hợp lệ
+                                </small> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="salary">Lương: </label>
+                                <div class="input-group">
+                                    <input type="number" 
+                                            ng-model="salary" 
+                                            class="form-control" 
+                                            name="salary" 
+                                            id="salary" 
+                                            aria-describedby="basic-addon2"
+                                            required
+                                            min="2000000">
+                                    <span class="input-group-text" id="basic-addon2">VND</span>
+                                </div>
+                                <small class="form-text text-danger" ng-show="form1.salary.$invalid">Lương không được để trống và lớn hơn 2000000</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Giới tính: </label>
+                                <div class="form-check">
+                                    <input value="1" ng-checked="gender == 1" ng-model="gender" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Nam
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input value="0" ng-checked="gender == 0" ng-model="gender" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Nữ
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Độ tuổi: </label>
+                                <select id="age" ng-model="age" ng-options="x.age for x in ages" class="form-select" aria-label="Default select example">
+                                    <!-- <option ng-repeat="i in ages" value="{{ i.age }}">{{i.age}}</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            Tiền thưởng: <strong>{{ getBonus() }}</strong> VNĐ
+                        </div>
+                    </div>
+                    <div ng-show="form1.$valid" class="alert alert-primary mt-3" role="alert">
+                        <strong>Tất cả đã nhập đầy đủ</strong>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="./js/angular.min.js"></script>
+    <script>
+        var app = angular.module('my_app', []);
+        app.controller('bonusController', function($scope){
+            $scope.ages = [
+                {
+                    age: 'Dưới 25',
+                    rate: 0.07
+                },
+                {
+                    age: 'Dưới 25 đến 40',
+                    rate: 0.1
+                },
+                {
+                    age: 'Trên 40',
+                    rate: 0.15
+                },
+            ];
+            
+            $scope.salary = 0;
+            $scope.age = $scope.ages[0];
+            $scope.gender = 1;
+            
+            $scope.getBonus = function(){
+                var bonus = $scope.age.rate * $scope.salary;
+                if($scope.gender == 0){
+                    bonus += 200000;
+                }
+                return bonus;
+            }
+        })
+    </script>
+</body>
+</html>

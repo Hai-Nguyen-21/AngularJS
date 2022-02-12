@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of Player</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="Lab2.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container ">
+        <header class="row bg-white mb-2">
+            <div class="col-md-6 online col-sm-12 pt-5 ">
+                <h1 class=" text-white">Online Shopping Mall</h1>
+                <hr class="my-2 ">
+                <h5>The center point of the professional programming</h5>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <img class="float-end" src="img/header-object.png">
+            </div>
+        </header>
+        <nav class=" row navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" style="color:beige">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="26" fill="currentColor"
+                        class="bi bi-house-door-fill" viewBox="0 0 10 20">
+                        <path
+                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                    </svg>
+                    Trang chủ</a>
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Lab2.html" style="color:beige">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor"
+                                    class="bi bi-exclamation-circle-fill" viewBox="0 0 15 22">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg>
+                                Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" style="color:beige">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" fill="currentColor"
+                                    class="bi bi-envelope-fill" viewBox="0 0 19 20">
+                                    <path
+                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                                </svg>
+                                Liên Hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" style="color:beige">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" fill="currentColor"
+                                    class="bi bi-send-fill" viewBox="0 0 12 20">
+                                    <path fill-rule="evenodd"
+                                        d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z" />
+                                </svg>
+                                Góp Ý</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" style="color:beige">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" fill="currentColor"
+                                    class="bi bi-question-octagon-fill" viewBox="0 0 15 20">
+                                    <path
+                                        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM5.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z" />
+                                </svg>
+                                Hỏi - Đáp</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color:beige">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="25" fill="currentColor"
+                                    class="bi bi-person-fill" viewBox="0 0 15 20">
+                                    <path
+                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                                Tài Khoản
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="21"
+                                            fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 15 22">
+                                            <path
+                                                d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                                        </svg>
+                                        Đăng Nhập</a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22"
+                                            fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 15 22">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        </svg>
+                                        Đăng Ký</a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22"
+                                            fill="currentColor" class="bi bi-exclamation-triangle-fill"
+                                            viewBox="0 0 15 22">
+                                            <path
+                                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                        </svg>
+                                        Quên Mật Khẩu</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22"
+                                            fill="currentColor" class="bi bi-files" viewBox="0 0 15 22">
+                                            <path
+                                                d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z" />
+                                        </svg>
+                                        Hồ Sơ Cá Nhân</a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22"
+                                            fill="currentColor" class="bi bi-toggles" viewBox="0 0 15 22">
+                                            <path
+                                                d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z" />
+                                        </svg>
+                                        Đổi Mật Khẩu</a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22"
+                                            fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 15 22">
+                                            <path fill-rule="evenodd"
+                                                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                            <path fill-rule="evenodd"
+                                                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                        </svg>
+                                        Đăng xuất</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22"
+                                            fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 15 22">
+                                            <path fill-rule="evenodd"
+                                                d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
+                                            <path
+                                                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                            <path
+                                                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                        </svg>
+                                        Đơn Đặt Hàng</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="currentColor"
+                                    class="bi bi-star-fill" viewBox="0 0 15 22">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                Việt Nam</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="currentColor"
+                                    class="bi bi-currency-dollar" viewBox="0 0 15 22">
+                                    <path
+                                        d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
+                                </svg>
+                                English</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <article class="col-md-9 col-12 bg-white">
+                <div class="container mb-5">
+                    <div class="row">
+                        <nav>
+                            <div class="nav nav-tabs mt-4" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                    aria-selected="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="25" fill="currentColor"
+                                        class="bi bi-journal-plus" viewBox="0 0 10 21">
+                                        <path fill-rule="evenodd"
+                                            d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z" />
+                                        <path
+                                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                        <path
+                                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                    </svg>
+                                    Danh sách</button>
+                                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                    aria-selected="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="25" fill="currentColor"
+                                        class="bi bi-list-stars" viewBox="0 0 10 19">
+                                        <path fill-rule="evenodd"
+                                            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
+                                        <path
+                                            d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z" />
+                                    </svg>
+                                    Cập Nhật</button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <div class="card border-secondary mb-3" style="max-width: 52rem;">
+                                    <div class="card-header bg-light border-secondary fw-bold">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="25"
+                                            fill="currentColor" class="bi bi-list-stars" viewBox="0 0 10 19">
+                                            <path fill-rule="evenodd"
+                                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
+                                            <path
+                                                d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z" />
+                                        </svg>
+                                        Bảng Lương Tháng 12
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered border-secondary mb-0 ">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th rowspan="2">Mã NV</th>
+                                                    <th rowspan="2">Họ Và Tên</th>
+                                                    <th colspan="3">Thu Nhập</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Lương</th>
+                                                    <th>Thưởng</th>
+                                                    <th>Phụ Cấp</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>NV100</td>
+                                                    <td>Nguyễn Công Phượng</td>
+                                                    <td>5000000</td>
+                                                    <td>5000000</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>NV102</td>
+                                                    <td>Phan Văn Tài Em</td>
+                                                    <td>9000000</td>
+                                                    <td>5000000</td>
+                                                    <td>100000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>NV103</td>
+                                                    <td>Lê Huỳnh Đức</td>
+                                                    <td>7000000</td>
+                                                    <td>3000000</td>
+                                                    <td>200000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="card-footer bg-light border-secondary">
+                                            Lương của cầu thủ và huấn luyện viên chuyên nghiệp
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab">
+                                <div class="card border-secondary" style="max-width: 52rem;">
+                                    <div class="card-header bg-light border-secondary fw-bold">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="25"
+                                            fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 10 21">
+                                            <path fill-rule="evenodd"
+                                                d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z" />
+                                            <path
+                                                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                            <path
+                                                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                        </svg>
+                                        Nhập Lương Tháng 12
+                                    </div>
+                                    <form class="row g-3 ms-3 me-3 mt-2 mb-5">                                                                  
+                                        <div class="col-md-6 col-12">
+                                            <label for="inputIDNV" class="form-label">Mã Nhân Viên<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="inputIDNV">
+                                                <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16" fill="currentColor"
+                                                        class="bi bi-person-rolodex" viewBox="0 0 16 16">
+                                                        <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                                        <path
+                                                            d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z" />
+                                                    </svg></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <label for="inputName" class="form-label">Họ Và Tên<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="inputName">
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <label for="inputCLB" class="form-label">Câu Lạc Bộ</label>
+                                            <select id="inputCLB" class="form-select">
+                                                <option selected>Đà Nẵng</option>
+                                                <option>Hà Nội</option>
+                                                <option>Hải Phòng</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <label for="inputSalary" class="form-label">Lương</label>
+                                            <input type="text" class="form-control" id="inputSalary">
+                                        </div>
+
+                                        <div class="col-md-6 col-12">
+                                            <label for="inputBonus" class="form-label">Thưởng</label>
+                                            <input type="text" class="form-control" id="inputBonus">
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <label for="inputSp" class="form-label">Phụ Cấp</label>
+                                            <input type="text" class="form-control" id="inputSp">
+                                        </div>
+
+                                        <div class="col-md-12 col-12">
+                                            <label for="inputNote" class="form-label">Ghi Chú</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-save2-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z" />
+                                                </svg>
+                                                Lưu</button>
+                                            <button type="submit" class="btn btn-danger">Hủy</button>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                Cập Nhật Theo Modal
+                                            </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Nhập Lương
+                                                                Tháng
+                                                                12
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body row g-3">
+                                                            <form class="row g-3">
+                                                                <div class="col-md-6">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            id="inputIDNV" placeholder="Mã Nhân Viên">
+                                                                        <span class="input-group-text"><svg
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                width="16" height="16"
+                                                                                fill="currentColor"
+                                                                                class="bi bi-person-rolodex"
+                                                                                viewBox="0 0 16 16">
+                                                                                <path
+                                                                                    d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                                                                <path
+                                                                                    d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z" />
+                                                                            </svg></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control"
+                                                                        id="inputName" placeholder="Họ Và Tên">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <select id="inputCLB" class="form-select">
+                                                                        <option selected>Đà Nẵng</option>
+                                                                        <option>Hà Nội</option>
+                                                                        <option>Hải Phòng</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-6">
+
+                                                                    <input type="text" class="form-control"
+                                                                        id="inputSalary" placeholder="Lương">
+                                                                </div>
+
+                                                                <div class="col-md-6">
+
+                                                                    <input type="text" class="form-control"
+                                                                        id="inputBonus" placeholder="Thưởng">
+                                                                </div>
+                                                                <div class="col-md-6">
+
+                                                                    <input type="text" class="form-control" id="inputSp"
+                                                                        placeholder="Phụ Cấp">
+                                                                </div>
+
+                                                                <div class="col-md-12">
+
+                                                                    <textarea class="form-control"
+                                                                        placeholder="Ghi Chú"></textarea>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                                Hủy</button>
+                                                            <button type="button" class="btn btn-primary">Lưu</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+            </article>
+            <aside class="col-md-3 col-12 bg-white">
+                <div class="card mb-3 mt-4" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="img/shoppingcart.gif" class="img-fluid rounded-start ms-2 mt-2">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text">100 items<br>
+                                    $ 56.8<br>
+                                    <a href="#" class="card-link">View Cart</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="height: 70px;">
+                    <form class="d-flex mt-3 ms-4">
+                        <input class="form-control me-4" type="search" placeholder="Keywords" aria-label="Search">
+                    </form>
+                </div>
+
+                <div class="card mb-5" style="max-width: 540px;">
+                    <div class="card-header ms-0 fw-bold fs-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="20" fill="currentColor"
+                            style="font-weight: bolder;" class="bi bi-list-stars" viewBox="0 0 19 14">
+                            <path fill-rule="evenodd"
+                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
+                            <path
+                                d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z" />
+                        </svg>
+                        CHỦNG LOẠI
+                    </div>
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item"><a href="#" class="card-link text-decoration-none text-dark">Điện
+                                thoại di động</a></li>
+                        <li class="list-group-item"><a href="#" class="card-link text-decoration-none text-dark">Máy
+                                tính xách tay</a></li>
+                        <li class="list-group-item"><a href="#" class="card-link text-decoration-none text-dark">Máy
+                                tính để bàn</a></li>
+                        <li class="list-group-item"><a href="#" class="card-link text-decoration-none text-dark">Quạt
+                                bàn</a></li>
+                        <li class="list-group-item"><a href="#"
+                                class="card-link text-decoration-none text-dark">Tivi</a>
+                        </li>
+                        <li class="list-group-item"><a href="#" class="card-link text-decoration-none text-dark">Tủ
+                                lạnh</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer class="row">
+            <div class="card text-center bg-secondary">
+                <div class="card-body">
+                    <p class="card-text">Copyright &copy; 2022 by HaiNguyen.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+
+</html>

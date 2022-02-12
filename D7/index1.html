@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Làm quen với Angualr JS</title>
+</head>
+<body ng-app="hello_world_app">
+
+    <div ng-controller="my_controller">
+        <h3>{{ message }}</h3>
+    </div>
+    
+    <!-- angular js -->
+    <script src="../D7/js/angularjs.min.js"></script>
+    <!-- làm này làm kia nè -->
+    <script>
+        // b1: tạo ứng dụng angularjs
+        const app = angular.module("hello_world_app", []);
+
+        // b2: khai báo phạm vi hoạt động của đối tượng angular sử dụng ng-app
+        
+        // b3: tạo controller để quản lý các thành phần của UI
+        function myFunc($scope){
+            $scope.message = "Hello World";
+        }
+
+        app.controller("my_controller", myFunc)
+
+        // Hiển thị message với expression
+    </script>
+</body>
+</html>

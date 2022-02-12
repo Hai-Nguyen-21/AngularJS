@@ -1,0 +1,40 @@
+Application:
+	- ng-app
+	- ng-controller
+
+Template:
+	- ng-csp
+	- ng-disabled
+	- ng-hide | show
+	- ng-if
+	- ng-mouse
+	- ng-repeat
+	- ng-switch
+	- ng-transclude
+	- ng-view
+	- ng-include
+
+Operation:
+	- ng-change
+	- ng-check
+	- ng-click
+	- ng-href
+	- ng-selected
+
+Forms:
+	- ng-pattern
+	- ng-minlength
+	- ng-maxlength
+	- ng-required
+	- ng-list
+	- ng-true-value
+	- ng-false-value
+	- ng-options
+	- ng-submit
+
+Binding
+	- ng-bind
+	- ng-model
+	- ng-init
+	- ng-src
+	- ng-style

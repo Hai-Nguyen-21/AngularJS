@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+    <div class="container" ng-controller="myController">
+        <div>
+            <div class="mb-3">
+                <label for="inputName" class="form-label">Họ và tên: </label>
+                <input ng-model="student.name" type="text" class="form-control" id="inputName" placeholder="Enter name">
+            </div>
+            <div class="mb-3">
+                <label for="inputDate" class="form-label">Ngày sinh: </label>
+                <input ng-model="student.dob" type="text" class="form-control" id="inputDate" placeholder="Enter date of birth">
+            </div>
+            <div class="mb-3">
+                <label for="inputMark" class="form-label">Điểm: </label>
+                <input ng-model="student.mark" type="text" class="form-control" id="inputMark" placeholder="Enter mark">
+            </div>
+            <div class="mb-3">
+                <button ng-click="save()" class="btn btn-success">Thêm</button>
+                <button ng-click="update()" class="btn btn-primary">Sửa</button>
+                <button ng-click="new()" class="btn btn-outline-dark">Mới</button>
+            </div>
+        </div>
+        
+        <hr>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Họ và tên</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Điểm</th>
+                        <th scope="col">Xếp loại</th>
+                        <th scope="col">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="student in students">
+                        <td scope="row">{{student.name}}</td>
+                        <td>{{student.dob}}</td>
+                        <td>{{student.mark}}</td>
+                        <td>
+                            <span ng-if="student.mark < 5">Yếu/Kém</span>
+                            <span ng-if="student.mark >= 5 && student.mark <=8">Trung bình/Khá</span>
+                            <span ng-if="student.mark > 8">Giỏi</span>
+                        </td>
+                        <td>
+                            <button ng-click="edit($index)" class="btn btn-info">Sửa</button> |
+                            <button ng-click="delete($index)" class="btn btn-danger">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+    <script src="./js/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        app.controller('myController', function($scope){
+            $scope.index = -1;
+            $scope.student = {};
+            $scope.students=[
+                {
+                    name: "Nguyễn Lê Hải",
+                    dob: "20-01-2002",
+                    mark: 9
+                },
+                {
+                    name: "Nguyễn Khánh Nam",
+                    dob: "20-02-2002",
+                    mark: 9
+                },
+                {
+                    name: "Lê Thành Đạt",
+                    dob: "20-03-2002",
+                    mark: 7
+                },
+            ]
+
+        $scope.save = function(){
+            $scope.students.push(angular.copy($scope.student))
+        }
+
+        $scope.update = function(){
+            $scope.students[$scope.index] = angular.copy($scope.student);
+            $scope.new()
+        }
+
+        $scope.new = function(){
+            $scope.student={}
+        }
+
+        $scope.edit = function (index) {
+            $scope.index = index;
+            $scope.student = angular.copy($scope.students[index]);
+        }
+
+        $scope.delete = function(index){
+            $scope.index = index;
+            $scope.students.splice($scope.index)
+        }
+            
+        })
+
+    </script>
+</body>
+</html>

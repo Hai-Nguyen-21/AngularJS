@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần 2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body ng-app="phan2">
+    
+    <div class="container" ng-controller="show_info">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Họ và tên</label>
+            <input ng-model="info.name" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Ngày sinh</label>
+            <input  ng-model="info.date" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Giới tính</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Điểm</label>
+            <input type="text" ng-model="score" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Tình trạng</label>
+            <input type="text" ng-model="result" disabled class="form-control text-uppercase" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-success text-uppercase" ng-click="xepLoai()">grade</button>
+        </div>
+    </div>
+
+    <!-- angular js -->
+    <script src="../D7/js/angularjs.min.js"></script>
+    <!-- làm này làm kia nè -->
+
+    <script>
+        const app = angular.module('phan2', []);
+
+        function showInfo($scope){
+            $scope.info = {
+                name: "Nguyễn Lê Hải",
+                date: '21/01/2002',
+                gender: true,
+            }
+
+            $scope.xepLoai = function(){
+                var mark = parseFloat($scope.score);
+                if(mark >= 5){
+                    $scope.result = 'passed'
+                } else {
+                    $scope.result = 'not pass'
+                }
+            }
+        }
+
+        app.controller('show_info', showInfo)
+        app.controller('')
+    </script>
+</body>
+</html>

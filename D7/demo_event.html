@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Event</title>
+</head>
+<body ng-app="demo_event_app">
+
+    <div ng-controller="my_func">
+        <button ng-click="onClick()">Click me</button>
+        {{count}}
+    </div>
+    <hr>
+    <div ng-controller="calculator">
+        A: <input type="text" ng-model="num1" name="" id=""> <br>
+        B: <input type="text" ng-model="num2" name="" id=""> <br>
+        <button ng-click="tinhTong()">Tổng</button> <br>
+        Answer: <input type="text" disabled ng-model="value">
+    </div>
+    
+    <!-- angular js -->
+    <script src="../D7/js/angularjs.min.js"></script>
+    <!-- làm này làm kia nè -->
+    <script>
+        const app = angular.module('demo_event_app', [])
+
+        const myFunc = function($scope){
+            $scope.count = 0
+            $scope.onClick = function(){
+                $scope.count++
+            }
+        } 
+
+        function calculator($scope){
+            // $scope.value = 0
+            $scope.tinhTong = function(){
+                var num = Number.parseInt($scope.num1) + Number.parseInt($scope.num2)
+                $scope.value = num
+            }
+        }
+
+        app.controller('my_func', myFunc)
+        app.controller('calculator', calculator)
+    </script>
+</body>
+</html>

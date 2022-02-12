@@ -1,0 +1,21 @@
+body {
+    background-color: beige;
+}
+
+.online>h1 {
+    font-family: Impact;
+    font-size: 60px;
+    text-shadow: 0 0 2px black;
+    letter-spacing: 0.3px;
+}
+
+.online>h5 {
+    letter-spacing: 0.5px;
+    font-variant: small-caps;
+}
+
+.container>div>aside {}
+
+thead {
+    background-color: wheat;
+}
