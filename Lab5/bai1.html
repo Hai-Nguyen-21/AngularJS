@@ -88,6 +88,7 @@
 
         $scope.save = function(){
             $scope.students.push(angular.copy($scope.student))
+            this.new()
         }
 
         $scope.update = function(){

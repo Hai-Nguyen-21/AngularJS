@@ -24,8 +24,13 @@
                                         ng-model="fullname"
                                         type="text" 
                                         class="form-control" 
-                                        aria-describedby="fullnameinput" name="fullnameinput" id="fullnameinput">
-                                <small ng-show="form4.fullnameinput.$invalid" id="fullnameinput" class="text-danger">Họ và tên không hợp lệ</small>
+                                        aria-describedby="fullnameinput" name="fullname" id="fullnameinput">
+                                    <div ng-hide="form4.fullname.$valid || form4.fullname.$untouched || form4.$submitted">
+                                        <small class="form-text text-danger"
+                                                ng-show="form4.fullname.$error.required">
+                                            Họ tên không được để trống
+                                        </small>
+                                    </div>
                             </div>
                             <div class="form-group mb-3 ">
                                 <label for="">Điểm</label>
@@ -33,10 +38,18 @@
                                         ng-model="mark"
                                         min="0"
                                         max="10"
+                                        ng-minlength="0"
+                                        ng-maxlength="10"
                                         type="number" 
                                         class="form-control" 
                                         aria-describedby="markinput" name="markinput" id="markinput">
-                                <small ng-show="form4.markinput.$invalid" id="markinput" class="text-danger">Điểm phải trong khoảng từ 0 đến 10</small>
+                                
+                                <div ng-hide="form4.markinput.$valid || form4.markinput.$untouched || form4.$submitted">
+                                    <small ng-show="(form4.markinput.$dirty && (form4.markinput.$error.minlength || form4.markinput.$error.maxlength))" 
+                                            id="markinput" class="text-danger">
+                                        Điểm phải trong khoảng từ 0 đến 10
+                                    </small>
+                                </div>
                             </div>
                             <div class="form-group mb-3 ">
                                 <label for="">Email</label>
@@ -45,7 +58,16 @@
                                         type="email" 
                                         class="form-control" 
                                         aria-describedby="emailinput" name="emailinput" id="emailinput">
-                                <small ng-show="form4.emailinput.$invalid" id="emailinput" class="text-danger">Email không hợp lệ</small>
+                                <div ng-hide="form4.emailinput.$valid || form4.emailinput.$untouched || form4.$submitted">
+                                    <small ng-show="form4.emailinput.$error.email" 
+                                            id="emailinput" class="text-danger">
+                                        Email không đúng định dạng
+                                    </small>
+                                    <small ng-show="form4.emailinput.$error.required" 
+                                            id="emailinput" class="text-danger">
+                                        Email không được để trống
+                                    </small>
+                                </div>
                             </div>
                             <div class="form-group mb-3 ">
                                 <label for="">Số xe</label>
@@ -55,11 +77,13 @@
                                         type="text" 
                                         class="form-control" 
                                         aria-describedby="soxeinput" name="soxeinput" id="soxeinput">
-                                <small ng-show="form4.soxeinput.$invalid" id="soxeinput" class="text-danger">Số xe không đúng định dạng</small>
+                                <div ng-hide="form4.soxeinput.$valid || form4.soxeinput.$untouched || form4.$submitted">
+                                    <small ng-show="form4.soxeinput.$invalid" id="soxeinput" class="text-danger">Số xe không đúng định dạng</small>
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-primary">Lưu</button>
+                            <button ng-disabled="form4.fullname.$invalid || form4.markinput.$invalid || form4.emailinput.$invalid || form.soxeinput.$invalid" class="btn btn-primary">Lưu</button>
                         </div>
                     </div>
                     <div ng-if="form4.$valid" class="alert alert-success" role="alert">

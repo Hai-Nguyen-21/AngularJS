@@ -83,26 +83,35 @@
                                     <div class="input-group mb-3">
                                         <input class="form-control"
                                                 ng-model="sv.email" 
-                                                type="text" 
+                                                type="email" 
                                                 name="email" 
                                                 id="email" 
                                                 required/>
                                         <span class="input-group-text" id="basic-addon2">@fpt.edu.vn</span>
                                     </div>
-                                    <small ng-hide="form_sv.email.$valid" class="text-danger">Không được để trống</small>
+                                    <div ng-hide="form_sv.email.$valid || form_sv.email.$untouched">
+                                        <small ng-show="form_sv.email.$error.required" class="text-danger">Không được để trống</small>
+                                        <small ng-show="form_sv.email.$error.email" class="text-danger">Không đúng định dạng email</small>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <label class="col-2">Password<span class="text-danger">*</span></label>
                                 <div class="col-10">
                                     <input class="form-control"
-                                            ng-model="sv.password" 
+                                            ng-model="sv.password"
+                                            check-password
                                             type="password" 
                                             name="password" 
                                             id="password" 
                                             required/>
-                                    <small ng-hide="form_sv.password.$valid" class="text-danger">Không được để trống</small>
+                                    <div ng-hide="form_sv.password.$valid || form_sv.password.$untouched">
+                                        <small ng-show="form_sv.password.$error.required" class="text-danger">Không được để trống</small>
+                                        <small ng-show="form_sv.password.$error.check_pw_length" class="text-danger">Tối thiểu 6 ký tự</small>
+                                    </div>
                                 </div>
+                                
                             </div>
                             <div class="row mt-3">
                                 <label class="col-2">Ảnh đại diện</label>

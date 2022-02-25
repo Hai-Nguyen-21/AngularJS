@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app="demo_http">
+    <div ng-controller="myctrl">
+        <form
+            action=""
+            ng-submit="onSubmitForm($event)"
+            class="col-8 offset-2">
+            <div class="form-group mt-3">
+                <label for="">Họ tên:</label>
+                <input class="form-control"
+                    type="text"
+                    ng-model="student.name">
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Mã SV</label>
+                <input class="form-control"
+                    type="text"
+                    ng-model="student.code">
+            </div>
+            <div class="form-group mt-3">
+                <label for="">Chuyên ngành</label>
+                <input class="form-control"
+                    ng-model="student.chuyen_nganh">
+            </div>
+            <div class="form-group mt-3">
+                <button class="btn btn-primary">Lưu</button>
+                <button class="btn btn-default ml-3">Xóa form</button>
+            </div>
+        </form>
+        <div class="col-8 offset-2">
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ tên</th>
+                        <th>Mã SV</th>
+                        <th>Chuyên ngành</th>
+                        <th colspan="2">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="st in students">
+                        <td>{{ st.id }}</td>
+                        <td>{{ st.name }}</td>
+                        <td>{{ st.code }}</td>
+                        <td>{{ st.chuyen_nganh }}</td>
+                        <td>
+                            <button class="btn btn-primary">Sửa</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal_delete_{{ st.id }}">Xóa</button>
+                            <!-- Modal Create -->
+                            <div class="modal fade" id="modal_delete_{{ st.id }}"
+                                tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Xóa</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Xác nhận xóa?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Đóng</button>
+                                            <button type="button"
+                                                ng-click="onDelete(st.id)"
+                                                class="btn btn-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="js/angularjs.min.js">
+    </script>
+    <script>
+        var app = angular.module("demo_http", []);
+        app.controller("myctrl", function ($scope, $http) {
+            const api = 'https://620b061fbeee430017f38481.mockapi.io/students';
+
+            $http.get(api) // Gửi 1 request tới API với method: GET
+                .then(function (response) {
+                    $scope.students = response.data;
+                })
+
+                $scope.onSubmitForm = function (event) {
+                    //event.preventDefault();
+                    $http.post(api, $scope.student)
+                        .then(function (response) {
+                            console.log(response);
+                        });
+                }
+
+                $scope.onDelete = function(id) {
+                    $http.delete(api + '/' + id);
+                }
+        });
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html

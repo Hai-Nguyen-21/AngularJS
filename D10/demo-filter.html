@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body ng-app="my_app">
+    <div ng-controller="myController" class="container">
+        <span class="text-danger">Kiểu 1: </span> <p>{{mynumber}}</p>
+        <span class="text-danger">Kiểu 2: </span> <p>{{mynumber | number: 4}}</p>
+        <span class="text-danger">Kiểu 3: </span> <p>{{mynumber | currency : "$" : 4}}</p>
+        <span class="text-danger">Kiểu 4: </span> <p>{{now}}</p>
+        <span class="text-danger">Kiểu 5: </span> <p>{{now | date : 'dd/MM/yy HH:mm:ss'}}</p>
+        <span class="text-danger">Kiểu 6 (múi giờ của Nhật): </span> <p>{{now | date : 'dd/MM/yyyy HH:mm:ss' : '+09'}}</p>
+        <span class="text-danger">Kiểu 7 (múi giờ của Việt Nam): </span> <p>{{now | date : 'dd/MM/yyyy HH:mm:ss' : '+07'}}</p>
+        <span class="text-danger">Kiểu 8:</span> <p>{{name | uppercase}}</p>
+        <span class="text-danger">Kiểu 9:</span> <p>{{name | lowercase}}</p>
+        <span class="text-danger">Kiểu 10:</span> <p>{{sv}}</p>
+        <hr>
+        <ul>
+            <li ng-repeat=" item in arr | limitTo: 3 : 1 ">
+                {{item.id}} - {{item.name}}
+            </li>
+        </ul>
+        <ul>
+            <li ng-repeat=" item in arr | orderBy: 'id' ">
+                {{item.id}} - {{item.name}}
+            </li>
+        </ul>
+    </div>
+    
+    <script src="./js/angular.min.js"></script>
+    <script>
+        const app = angular.module('my_app', []);
+        app.controller('myController', function($scope){
+            $scope.now = new Date();
+            $scope.mynumber = 123456789.123456789;
+            $scope.name = "FPT Polytechnic";
+            $scope.sv = {
+                name: 'Nguyễn Lê Hải',
+                gender: 1,
+                major: 'UDPM'
+            }
+            $scope.arr = [
+                {id: 'WEB207', name: "Frontend Framework"},
+                {id: 'SOF2041', name: "Dự án mẫu"},
+                {id: 'MOB1041', name: "Lập trình Java 1"},
+                {id: 'COM108', name: "Nhập môn lập trình"},
+                {id: 'SOF303', name: "Kiểm thử cơ bản"},
+                {id: 'VIE103', name: "Vovinam"},
+                {id: 'VIE1016', name: "Chính trị"},
+            ]
+        })
+    </script>
+</body>
+</html>

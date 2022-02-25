@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+
+<body ng-app="myApp">
+    <div class="row container ms-5 " ng-controller="ctr">
+        <div class="col-md-3 mt-4 col-12" ng-repeat="it in items">
+            <div class="card border-success mb-3 ">
+                <div class="card-header bg-success border-success text-center">{{it.name}}</div>
+                <div class="card-body text-success">
+                    <img src="https://source.unsplash.com/random/1" class="img-thumbnail border-0">
+                </div>
+                <div class="card-footer bg-light border-success text-center">{{it.price}}</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script>
+        const app = angular.module("myApp", []);
+        app.controller("ctr", show);
+        function show($scope) {
+            $scope.items = [
+                {
+                    name: "Đồng Hồ Thụy Sĩ",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$1200",
+                },
+                {
+                    name: "Dell Star X",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$700",
+                },
+                {
+                    name: "Sony Vaio 2017",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$1700",
+                },
+                {
+                    name: "Máy ảnh Cannon",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$300",
+                },
+                {
+                    name: "Máy ảnh Cannon",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$300",
+                },
+                {
+                    name: "Máy ảnh Cannon",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$300",
+                },
+                {
+                    name: "Máy ảnh Cannon",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$300",
+                },
+                {
+                    name: "Máy ảnh Cannon",
+                    pic: "https://source.unsplash.com/random/1",
+                    price: "$300",
+                },
+            ];
+        }
+    </script>
+
+</body>
+
+</html>

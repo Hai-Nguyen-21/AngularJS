@@ -17,24 +17,28 @@
                             Tính lương thưởng tết nguyên đán
                         </div>
                         <div class="card-body">
-                            <div class="form-group">
+                            <div class="form-group m-2">
                                 <label for="fullname">Họ và tên: </label>
                                 <input type="text" 
                                         ng-model="fullname"
+                                        ng-pattern="checkFullNamePattern"
+                                        ng-trim="false"
                                         class="form-control"
                                         name="fullname"
                                         id="fullname"
                                         required>
-                                <small class="form-text text-danger"
-                                        ng-show="form1.fullname.$invalid">
+                                <div ng-hide="form1.fullname.$valid || form1.fullname.$untouched || form1.$submitted">
+                                    <small class="form-text text-danger"
+                                            ng-show="form1.fullname.$error.required">
                                         Họ tên không được để trống
-                                </small>
-                                <!-- <small class="form-text text-danger"
-                                        ng-hide="form1.fullname.$valid">
-                                        Họ tên hợp lệ
-                                </small> -->
+                                    </small>
+                                    <!-- <small class="form-text text-danger"
+                                            ng-show="form1.fullname.$error.pattern">
+                                        Họ tên không hợp lệ
+                                    </small> -->
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group m-2">
                                 <label for="salary">Lương: </label>
                                 <div class="input-group">
                                     <input type="number" 
@@ -47,9 +51,18 @@
                                             min="2000000">
                                     <span class="input-group-text" id="basic-addon2">VND</span>
                                 </div>
-                                <small class="form-text text-danger" ng-show="form1.salary.$invalid">Lương không được để trống và lớn hơn 2000000</small>
+                                <div ng-hide="form1.salary.$valid || form1.salary.$untouched || form1.$submitted">
+                                    <small class="form-text text-danger"
+                                            ng-show="form1.salary.$error.required || form1.salary.$invalid">
+                                            Lương phải lớn hơn hoặc bằng 2000000
+                                    </small>
+                                    <!-- <small class="form-text text-danger"
+                                            ng-show="form1.salary.$error.minlength">
+                                        Lương phải lớn hơn hoặc bằng 2000000
+                                    </small> -->
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group m-2">
                                 <label for="">Giới tính: </label>
                                 <div class="form-check">
                                     <input value="1" ng-checked="gender == 1" ng-model="gender" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -64,7 +77,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group m-2">
                                 <label for="age">Độ tuổi: </label>
                                 <select id="age" ng-model="age" ng-options="x.age for x in ages" class="form-select" aria-label="Default select example">
                                     <!-- <option ng-repeat="i in ages" value="{{ i.age }}">{{i.age}}</option> -->
@@ -114,7 +127,20 @@
                 }
                 return bonus;
             }
+
+            $scope.checkFullNamePattern = (function(){
+                var regex = '/[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/u';
+                return {
+                    test: function(value){
+                        if($scope.requiredTel == false){
+                            return true;
+                        }
+                        return regex.test(value);
+                    }
+                }
+            })
         })
+
     </script>
 </body>
 </html>

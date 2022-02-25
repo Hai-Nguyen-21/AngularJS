@@ -28,3 +28,21 @@ app.controller('form_controller', function($scope){
         },
     ]
 })
+
+app.directive("checkPassword", function(){
+    return {
+        require: 'ngModel',
+        link: function(scope, element, atrr, controller){
+            const validate = function(value){
+                if(value.length >= 6){
+                    controller.$setValidity('check_pw_length', true);
+                } else {
+                    controller.$setValidity('check_pw_length', false);
+                }
+                return value;
+            }
+            
+            controller.$parsers.push(validate);
+        }
+    }
+})
